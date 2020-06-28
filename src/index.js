@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000
 app.get('', (req, res) =>{
     console.log(req) // request to endpoint
 
-    res.send('sent from node :)')
+    res.send('sent from node :)' + req)
 })
 
 app.listen(port, () => {
