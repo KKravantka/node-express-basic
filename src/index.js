@@ -7,7 +7,19 @@ app.get('', (req, res) =>{
     console.log(req) // request to endpoint
 
     res.send('sent from node :')
+
+})
+
+app.get('/test/:id', (req, res) =>{
+    const _id = req.params.id
+    console.log(_id) //see what the request ID looks like
     
+    if(req.params.id.length > 5) {
+        res.send('The id sent is: ' + req.params.id)
+    } else {
+        console.log('no ID provided, returning 404')
+        res.status(404).send()
+    }
 })
 
 app.listen(port, () => {
